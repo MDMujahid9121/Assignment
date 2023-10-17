@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(187, 199, 171);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.buttons button{
+    background-color: rgb(114, 180, 38);
+    color:white;
+    flex-basis: 25%;
+    
+    height:60px;
+    font-size: large;
+    font-weight: 800;
+    border-radius: 3%;
+    border:1.5px solid rgb(39, 34, 32);
+    
+}
+.cal{
+   
+    /* margin-top: 150px; */
+    width:320px;
+    /* height:400px; */
+    border:none;
+    background-color: aliceblue;
+    box-shadow: 8px 8px 8px rgb(43, 41, 41);;
+}
+.buttons{
+    display:flex;
+    flex-wrap: wrap;
+}
+.top
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.top input{
+    width:381px;
+    height:57px;
+    border:1.5px solid rgb(39, 34, 32);
+}
+.top button{
+    width:120px;
+    height:61px;
+    border:1.5px solid rgb(39, 34, 32);
+    background-color:red;
+    color:white;
+    font-size: large;
+    font-weight: 800;
+    /* border-radius: 3%; */
+}
+
+button:hover{
+    background-color: rgb(52, 81, 107);
+}
+.whole
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#calc
+{
+    background-color: green;
+}
+#calc:hover{
+    background-color: rgb(52, 81, 107);
+}

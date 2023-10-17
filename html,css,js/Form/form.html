@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: left;
+        }
+        #box1
+        {
+            width:320px;
+            height:270px;
+            background-color: aqua;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="box1">
+    <h3>Survey Form</h3>
+    <form id="surveyForm" onsubmit="return false;">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br>
+
+        <label for="country">Country:</label>
+        <select id="country" required>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="New Zealand">Nw Zealand</option>
+            <option value="South Africa">South Africa</option>
+            <option value="England">England</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Srilanka">Srilanka</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="West Indies">West Indies</option>
+            <option value="Ireland">Ireland</option>
+        </select><br>
+
+        <label>Gender:</label>
+        <input type="checkbox" id="male"> Male
+        <input type="checkbox" id="female"> Female<br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" required><br>
+
+        <button type="submit" onclick="submitForm()">Submit</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+
+</div>
+
+    <div id="popup">
+        <h2>Submitted Values:</h2>
+        <div id="popupContent"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function submitForm() {
+          
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const dob = document.getElementById("dob").value;
+            const country = document.getElementById("country").value;
+            const gender = document.getElementById("male").checked ? "Male" : "Female";
+            const profession = document.getElementById("profession").value;
+            const email = document.getElementById("email").value;
+            const mobile = document.getElementById("mobile").value;
+
+            const popupContent = document.getElementById("popupContent");
+            popupContent.innerHTML = `
+                <p>First Name: ${firstName}</p>
+                <p>Last Name: ${lastName}</p>
+                <p>Date of Birth: ${dob}</p>
+                <p>Country: ${country}</p>
+                <p>Gender: ${gender}</p>
+                <p>Profession: ${profession}</p>
+                <p>Email: ${email}</p>
+                <p>Mobile Number: ${mobile}</p>
+            `;
+
+            const popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        function resetForm() {
+            document.getElementById("surveyForm").reset();
+        }
+
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            popup.style.display = "none";
+            resetForm();
+        }
+    </script>
+</body>
+</html>
